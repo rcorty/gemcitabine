@@ -121,10 +121,10 @@ make_results_table <- function(analysis) {
 
 run_analysis <- function(mingrade = 3L,
                          lag_days = 0,
-                         permanent_exposure = TRUE,
-                         do_cat3_abx = TRUE,
+                         permanent_exposure = FALSE,
+                         do_cat3_abx = FALSE,
                          do_composite_aes = TRUE,
-                         do_individual_aes = TRUE) {
+                         do_individual_aes = FALSE) {
 
   #### read in exposure data (abx) ####
   message('Reading antibacterial exposure data...')

@@ -1,5 +1,5 @@
 library(furrr)
-plan(multiprocess)
+plan(multisession)
 library(survival)
 library(IRanges)
 library(tidyverse)
@@ -7,10 +7,10 @@ library(tidyverse)
 source('scripts/gem_utils.R')
 source('scripts/gem_constants.R')
 
-mingrades <- c(2L, 3L)
+mingrades <- 3L #c(2L, 3L)
 lags <- c(0, 7, 14)
 
-params <- bind_rows(crossing(mingrade = mingrades, lag = lags, permanent = FALSE),
+params <- bind_rows(#crossing(mingrade = mingrades, lag = lags, permanent = FALSE),
                     crossing(mingrade = mingrades, lag = 0, permanent = TRUE))
 
 outfile_name <- paste0(params_to_string(mingrades, lags), '.RDS')
